@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+
+    <style>
+       #map {
+        height:500px;
+        background-color:rgb(14, 240, 101)
+       }
+    </style>
+    <title>Document</title>
+    
+    <script src="script.js" defer>
+    </script>
+    
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin="">
+         </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    
+</head>
+<body>
+    <form>
+        <select id="business">
+            <option value ="hotels">Hotels 🏨</option>
+            <option value ="markets">Markets 🏪</option>
+            <option value ="restaurants">Restaurants 🍴🍺</option>
+            <option value="coffee shops">Coffee Shops ☕️</option>
+        </select>
+        
+        <button id="submit">Submit
+        </button>
+
+    </form>
+
+    <div id="map"></div>
+    
+</body>
+<body>
+    <script>
+        var map = L.map('map').setView([0, 0], 1);
+        L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=YxWItSgtZnIxpUpp93zF', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+
+        }).addTo(map);
+       var marker = L.marker([25.8, -80.22]).addTo(map)
+    </script>
+</body>
+</html>
